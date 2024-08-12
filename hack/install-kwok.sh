@@ -115,8 +115,8 @@ then
   kubectl delete -f ${crdURL}
   kubectl delete -f ${HOME_DIR}/kwok.yaml
 else
-  echo "applykwok"
-  # kubectl apply -f ${HOME_DIR}/kwok.yaml
+  kubectl apply -f ${HOME_DIR}/kwok.yaml
   kubectl apply -f ${crdURL}
+  kubectl scale -n kube-system deploy/kwok-controller-a --replicas 0
 fi
 
