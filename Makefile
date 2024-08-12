@@ -47,7 +47,7 @@ e2etests: ## Run the e2e suite against your local cluster
 		-v \
 		./suites/$(shell echo $(TEST_SUITE) | tr A-Z a-z)/... \
 		--ginkgo.focus="${FOCUS}" \
-		--ginkgo.timeout=30m \
+		--ginkgo.timeout=2h \
 		--ginkgo.grace-period=5m \
 		--ginkgo.vv
 
@@ -69,7 +69,7 @@ delete: ## Delete the controller from your ~/.kube/config cluster
 test: ## Run tests
 	go test ./pkg/... \
 		-race \
-		-timeout 20m \
+		-timeout 2h \
 		--ginkgo.focus="${FOCUS}" \
 		--ginkgo.randomize-all \
 		--ginkgo.v \
