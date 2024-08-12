@@ -115,7 +115,8 @@ then
   kubectl delete -f ${crdURL}
   kubectl delete -f ${HOME_DIR}/kwok.yaml
 else
-  kubectl apply -f ${HOME_DIR}/kwok.yaml
+  echo "applykwok"
+  # kubectl apply -f ${HOME_DIR}/kwok.yaml
   kubectl apply -f ${crdURL}
 fi
 
